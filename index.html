@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Type animation</title>
+
+	<script type="text/javascript">
+		function addLeter(letter){
+			const search = document.querySelector('#search');
+			search.innerHTML = search.innerHTML + letter;
+		}
+
+		function setWord(word){
+			document.querySelector('#search').innerHTML = '';
+			for (let i = 0; i < word.length; i++){
+				setTimeout(addLeter, 350 * i + Math.floor(Math.random() * 150), word[i]);
+			}
+		}
+	</script>
+
+
+	<style type="text/css">
+
+		body{
+			margin: 0;
+			background-color: darkblue; /* limegreen is nice */
+		}
+
+		#container {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			height: 100vh;
+		}
+
+		#search {
+			font-size: 120px;
+			font-family: Arial, Helvetica, sans-serif;
+			color: white;
+		}
+
+		/* Making the caret the same way as google: https://drive.googleblog.com/2010/05/whats-different-about-new-google-docs.html */
+		#caret {
+  			height: 120px;
+  			width: 2px;
+	  		background-color: white;
+		}
+
+
+	</style>
+</head>
+<body>
+<div id='container'>
+	<div id='search'>Start</div>
+	<div id='caret'></div>
+</div>
+
+</body>
+</html>

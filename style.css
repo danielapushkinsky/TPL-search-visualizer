@@ -1,0 +1,32 @@
+body{
+	margin: 0;
+	background-color: darkblue;
+}
+
+@font-face {
+  font-family: 'Product Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Open Sans'), local('OpenSans'), url(https://fonts.gstatic.com/s/productsans/v5/HYvgU2fE2nRJvZ5JFAumwegdm0LZdjqr5-oayXSOefg.woff2) format('woff2');
+}
+
+#container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+}
+
+#search {
+	font-size: 16vh;
+	text-shadow: 0.5vh 0.5vh 1vh black;
+	font-family: Product Sans;
+	color: white;
+}
+
+/* Making the caret the same way as google: https://drive.googleblog.com/2010/05/whats-different-about-new-google-docs.html */
+#caret {
+		height: 120px;
+		width: 2px;
+		background-color: white;
+}

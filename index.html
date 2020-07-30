@@ -1,82 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Type animation</title>
-
-	<script type="text/javascript">
-		function addLeter(letter){
-			const search = document.querySelector('#search');
-			search.innerHTML = search.innerHTML + letter;
-		}
-
-		function setWord(word){
-			document.querySelector('#search').innerHTML = '';
-			for (let i = 0; i < word.length; i++){
-				setTimeout(addLeter, 350 * i + Math.floor(Math.random() * 150), word[i]);
-			}
-		}
-		
-
-		function setWords(data){
-			let timePassed = 0;
-			for (let i = 0; i < data.length; i++) {
-				setTimeout(setWord, timePassed, data[i]); // Line up setWord calls with an equal interval for every word in data set
-				timePassed += 350 * data[i].length + 2500; // Time it takes to type word + 2500ms
-			}
-
-			setTimeout(getData, Math.max(20000, timePassed)); // api gets updated every 20s, so make a call every 20s or when you run out of data
-		}
-
-		function getData(){
-			const proxyurl = "https://cors-anywhere.herokuapp.com/";
-			const url = "https://dashboard.tpllabs.ca/fetch_data"; // site that doesn’t send Access-Control-*
-			fetch(proxyurl + url) // https://cors-anywhere.herokuapp.com/https://dashboard.tpllabs.ca/fetch_data
-				.then(response => response.json())
-				.then(contents => {
-						var data = contents.data;
-						console.log(data);
-						setWords(data);
-					})
-				.catch(() => console.log("Can’t access " + url + " response. Blocked by browser?"))
-		}
-	</script>
-
-
-	<style type="text/css">
-
-		body{
-			margin: 0;
-			background-color: darkblue; /* limegreen is nice */
-		}
-
-		#container {
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			height: 100vh;
-		}
-
-		#search {
-			font-size: 120px;
-			font-family: Arial, Helvetica, sans-serif;
-			color: white;
-		}
-
-		/* Making the caret the same way as google: https://drive.googleblog.com/2010/05/whats-different-about-new-google-docs.html */
-		#caret {
-  			height: 120px;
-  			width: 2px;
-	  		background-color: white;
-		}
-
-
-	</style>
+	<title>TPL Live Searches</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script type="text/javascript" src="TPLVisualizer.js"></script>
 </head>
 <body>
-<div id='container'>
-	<div id='search'>Start</div>
-	<div id='caret'></div>
-</div>
-
+	<div id='container'>
+		<div id='search'>TPL Live Searches...</div>
+		<div id='caret'></div>
+	</div>
 </body>
 </html>

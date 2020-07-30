@@ -26,7 +26,7 @@ body{
 
 /* Making the caret the same way as google: https://drive.googleblog.com/2010/05/whats-different-about-new-google-docs.html */
 #caret {
-		height: 120px;
+		height: 16vh;
 		width: 2px;
 		background-color: white;
 }

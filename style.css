@@ -14,7 +14,7 @@ body{
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	height: 100vh;
+	height: 97vh;
 }
 
 #search {
@@ -29,4 +29,16 @@ body{
 		height: 120px;
 		width: 2px;
 		background-color: white;
+}
+
+footer{
+	color: white;
+	font-size: 2vh;
+	margin-left: 1vh;
+}
+
+a {
+	color: lightgray;
+	text-decoration: none;
+	font-style: italic;
 }

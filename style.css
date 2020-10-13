@@ -22,7 +22,7 @@ footer{
 
 #search {
 	font-size: 16vh;
-	/* text-shadow: 0.5vh 0.5vh 1vh black; */
+	text-shadow: 0.2vh 0.2vh 0.2vh gray;
 	font-family: Product Sans;
 	color: white;
 }

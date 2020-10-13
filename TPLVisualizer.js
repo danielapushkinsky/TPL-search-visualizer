@@ -1,4 +1,6 @@
-const letterInterval = 300;
+const letterInterval = 200;
+const colors = ['#4285F4', '#DB4437', '#F4B400', '#0F9D58'];
+var colorChosen = 0;
 
 function addLeter(letter){
 	const search = document.querySelector('#search');
@@ -8,17 +10,42 @@ function addLeter(letter){
 function setWord(word){
 	document.querySelector('#search').innerHTML = '';
 	for (let i = 0; i < word.length; i++){
-		setTimeout(addLeter, letterInterval * i + Math.floor(Math.random() * 150), word[i]);
+		setTimeout(addLeter, letterInterval * i + Math.floor(Math.random() * letterInterval/2), word[i]);
 	}
+}
+
+function setColorSlide(){
+	var everyt = document.getElementsByClassName('slide')[0];
+	let oldColor = colorChosen;
+	colorChosen = Math.floor(Math.random() * 4);     // returns a random integer from 0 to 9
+	while (colorChosen == oldColor) {
+		colorChosen = Math.floor(Math.random() * 4);
+	}
+
+	document.body.style.backgroundColor = colors[colorChosen];
+	
+  	everyt.classList.add('horizTranslate');
+
+  	return colorN
+}
+
+function clearColorSlide(){
+	var everyt = document.getElementsByClassName('slide')[0];
+	everyt.style.backgroundColor = colors[colorChosen];
+  	everyt.classList.remove('horizTranslate');
 }
 
 function setWords(data){
 	let timePassed = 0;
 	for (let i = 0; i < data.length; i++){
-		setTimeout(setWord, timePassed, data[i]); // Line up setWord calls with an equal interval for every word in data set
+		setTimeout(setWord, timePassed, data[i]); // Line up setWord calls with an equal interval for every word in data set		
+		
 		timePassed += letterInterval * data[i].length + 2500; // Time it takes to type word + 2500ms
-	}
 
+		setTimeout(setColorSlide, timePassed);
+		timePassed += 2000;
+		setTimeout(clearColorSlide, timePassed);
+	}
 	setTimeout(getData, Math.max(20000, timePassed)); // api gets updated every 20s, so make a call every 20s or when you run out of data
 }
 

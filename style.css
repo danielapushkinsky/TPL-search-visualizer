@@ -1,6 +1,8 @@
 body{
 	margin: 0;
-	background-color: darkblue;
+	background-color: #4285F4;
+  	overflow-y: hidden; /* Hide vertical scrollbar */
+ 	overflow-x: hidden; /* Hide horizontal scrollbar */
 }
 
 @font-face {
@@ -10,16 +12,17 @@ body{
   src: local('Open Sans'), local('OpenSans'), url(https://fonts.gstatic.com/s/productsans/v5/HYvgU2fE2nRJvZ5JFAumwegdm0LZdjqr5-oayXSOefg.woff2) format('woff2');
 }
 
-#container {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	height: 97vh;
+footer{
+	color: white;
+	font-size: 2vh;
+	height: 2vh;
+	margin: 0;
+	background-color: black;
 }
 
 #search {
 	font-size: 16vh;
-	text-shadow: 0.5vh 0.5vh 1vh black;
+	/* text-shadow: 0.5vh 0.5vh 1vh black; */
 	font-family: Product Sans;
 	color: white;
 }
@@ -31,14 +34,26 @@ body{
 		background-color: white;
 }
 
-footer{
-	color: white;
-	font-size: 2vh;
-	margin-left: 1vh;
-}
-
 a {
 	color: lightgray;
 	text-decoration: none;
 	font-style: italic;
+}
+
+.slide {
+	background-color: #4285F4;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 98vh;
+}
+
+.slide.horizTranslate {
+  -webkit-transition: 3s;
+  -moz-transition: 3s;
+  -ms-transition: 3s;
+  -o-transition: 3s;
+  transition: 3s;
+  margin-left: 150% !important;
+  margin-right: -150% !important;
 }

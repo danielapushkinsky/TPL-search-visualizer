@@ -48,7 +48,7 @@ function setWords(data){
 }
 
 function getData(){
-	const proxyurl = "https://cors-anywhere.herokuapp.com/";
+	const proxyurl = "https://tranquil-cove-30806.herokuapp.com/";
 	const url = "https://dashboard.tpllabs.ca/fetch_data"; // site that doesn’t send Access-Control-*
 	fetch(proxyurl + url) // https://cors-anywhere.herokuapp.com/https://dashboard.tpllabs.ca/fetch_data
 		.then(response => response.json())

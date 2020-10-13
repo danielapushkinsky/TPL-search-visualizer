@@ -25,8 +25,6 @@ function setColorSlide(){
 	document.body.style.backgroundColor = colors[colorChosen];
 	
   	everyt.classList.add('horizTranslate');
-
-  	return colorN
 }
 
 function clearColorSlide(){

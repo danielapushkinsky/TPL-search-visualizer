@@ -48,7 +48,7 @@ a {
 	height: 98vh;
 }
 
-.slide.horizTranslate {
+.slide.right {
   -webkit-transition: 3s;
   -moz-transition: 3s;
   -ms-transition: 3s;
@@ -57,3 +57,34 @@ a {
   margin-left: 150% !important;
   margin-right: -150% !important;
 }
+
+.slide.left {
+  -webkit-transition: 3s;
+  -moz-transition: 3s;
+  -ms-transition: 3s;
+  -o-transition: 3s;
+  transition: 3s;
+  margin-left: -150% !important;
+  margin-right: 150% !important;
+}
+
+.slide.down {
+  -webkit-transition: 3s;
+  -moz-transition: 3s;
+  -ms-transition: 3s;
+  -o-transition: 3s;
+  transition: 3s;
+  margin-top: 150% !important;
+  margin-bottom: -150% !important;
+}
+
+.slide.up {
+  -webkit-transition: 3s;
+  -moz-transition: 3s;
+  -ms-transition: 3s;
+  -o-transition: 3s;
+  transition: 3s;
+  margin-top: -150% !important;
+  margin-bottom: 150% !important;
+}
+
